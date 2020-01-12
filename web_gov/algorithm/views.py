@@ -91,6 +91,10 @@ def LOOP(database,index):
     with open(str(index), 'w') as f:
         f.write(str(p)+","+str(r)+","+str(f1)+'\n')
         f.write(str(database) + "," + "LOOP" + "," + str(index))
+    #with open(str(index)+'_2', 'w') as f:
+    #    for a,b,c,d in zip(n_data,c_data,target,y):
+    #        f.write(','.join([str(i) for i in [a[0],a[1],a[2],b[0],b[1],c,int(d)]])+'\n')
+
     fig = tsne.tsne(n_data, y+1)
     #fig2 = tsne.tsne(n_data, 1-target)
     fig.savefig('media/'+str(index)+'.png')
